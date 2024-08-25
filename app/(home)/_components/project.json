@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Jotion(notion-clone)",
+        "description": "I'm thrilled to announce Jotion, a powerful Notion clone built with cutting-edge technologies! Using Next.js, we've harnessed the power of server-side rendering and React for blazing-fast performance and seamless user experiences. For state management, we're leveraging Convex, ensuring scalability and efficiency as the project grows. Authentication is simplified with Clerk, making user management both secure and easy. Edgestore is utilized for lightning-fast data storage and retrieval, ensuring smooth performance even with large datasets. Tailwind CSS is our choice for styling, allowing for rapid development and beautiful, responsive designs. With Jotion, we're pushing the boundaries of what's possible in collaborative workspace platforms. Key features include rich text editing that allows you to create, edit, and format content with ease, collaborative editing for real-time teamwork, flexible organization to customize your workspace to suit your needs, and seamless integration with your favorite tools and services to supercharge your productivity. Whether you're managing projects, brainstorming ideas, or organizing your life, Jotion empowers you to do it all in one sleek, intuitive platform. Join us as we redefine collaboration and productivity—check out Jotion today and experience the future of workspace solutions!",
+        "skills": [
+            "Next js",
+            "Tailwind css",
+            "Shadcn-UI",
+            "Convex.dev",
+            "Edge.store",
+            "Zod"
+        ],
+        "img": "https://www.imghippo.com/i/eTw1t1724499231.png",
+        "github": "",
+        "live": "content-ai-two.vercel.app"
+    },
+    {
+        "title": "Content.Ai(Ai content genrater)",
+        "description" : ""
+    }
+]
