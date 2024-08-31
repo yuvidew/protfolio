@@ -2,7 +2,6 @@
 
 import { FileCode, FileText, Home, Waypoints } from 'lucide-react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
 export const SideBar = () => {

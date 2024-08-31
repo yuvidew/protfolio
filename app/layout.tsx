@@ -35,7 +35,7 @@ export default function RootLayout({
             <SideBar/>
             </div>
             <div className="w-full pr-8 ">
-            {children}
+              {children}
             </div>
           </div>
         </ThemeProvider>
