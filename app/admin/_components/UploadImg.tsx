@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { ref, getStorage, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { app } from '@/firebase'
@@ -32,6 +34,7 @@ const FormSchema = z.object({
 
 export const UploadImg = () => {
     const {onUploadImage} = useFetch()
+    const projectId = typeof window !== 'undefined' ? localStorage.getItem("project-id") : null;
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
@@ -60,8 +63,7 @@ export const UploadImg = () => {
             obj.image = await onConvertImageToUrl(file);
 
             if (obj.image) {
-                // await onUploadImage(``, obj);
-                console.log(obj.image);
+                await onUploadImage(`https://profile-yd-108.onrender.com/api/post/add-project-image/project/${projectId}`, obj);
             } else {
                 console.error("Image URL is not available.");
             }
@@ -79,9 +81,14 @@ export const UploadImg = () => {
         mutate(data)
     };
     return (
-        <div>
+        <div className='p-5 bg-stone-600/50 rounded-md' >
+            <h3>Create Project Note</h3>
+            <br />
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className=' flex items-center gap-3'>
+                <form 
+                    onSubmit={form.handleSubmit(onSubmit)} 
+                    className=' flex items-center gap-3'
+                >
                     <FormField
                         control={form.control}
                         name="image"
@@ -92,7 +99,7 @@ export const UploadImg = () => {
                                         id="image"
                                         type="file"
                                         className='text-blue-500 font-bold cursor-pointer'
-                                        onChange={(e) => field.onChange(e.target.files)} // Handle file input correctly
+                                        onChange={(e) => field.onChange(e.target.files)} 
                                         required
                                     />
                                 </FormControl>

@@ -45,7 +45,7 @@ export const AllProjects = () => {
 
     return (
         <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2">
-            {data.map((ele, index) => (
+            {data.map((ele : any, index) => (
                 <Card key={index} className=' overflow-hidden'>
                     <img src={ele.img} alt={`${ele.title} image`} />
                     <CardHeader>

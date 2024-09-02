@@ -5,6 +5,7 @@ import { enqueueSnackbar } from 'notistack';
 
 interface ApiResponse {
     msg: string;
+    id : string;
 }
 
 export interface Item {
@@ -29,10 +30,12 @@ interface Description {
 export const useFetch = () => {
 
     const onCreateProjectTitle = async (url: string, data: any): Promise<void> => {
+        console.log(url , data);
         try {
             const res: AxiosResponse<ApiResponse> = await axios.post(url, data);
             if (res.status === 201) {
                 enqueueSnackbar(res.data.msg, { variant: 'success' });
+                localStorage.setItem("project-id" , res.data.id);
             }
         } catch (error: any) {
             enqueueSnackbar(error.response?.data?.msg || 'An error occurred', { variant: 'error' });
@@ -51,6 +54,7 @@ export const useFetch = () => {
     }
 
     const onAddTechSkills = async (url : string , data : Skills) : Promise<void> => {
+        console.log(data);
         try {
             const res: AxiosResponse<ApiResponse> = await axios.post(url, data);
             if (res.status === 201) {

@@ -42,7 +42,7 @@ export const ProjectTitle = () => {
 
     const { mutate , isPending} = useMutation({
         mutationKey : [" create project note"] ,
-        mutationFn : (data : z.infer<typeof FormSchema>) => onCreateProjectTitle("" , data)
+        mutationFn : (data : z.infer<typeof FormSchema>) => onCreateProjectTitle("https://profile-yd-108.onrender.com/api/post/create/project" , data)
     })
 
     const onSubmit = (data : z.infer<typeof FormSchema>) => mutate(data)
@@ -67,7 +67,7 @@ export const ProjectTitle = () => {
                         </FormItem>
                     )}
                 />
-                <div className="w-full  grid lg:grid-cols-2 gap-4 grid-cols-1 mt-[1.5rem]">
+                <div className="w-full grid lg:grid-cols-2 gap-4 grid-cols-1 mt-[1.5rem]">
                     <FormField
                         control={form.control}
                         name="github"
